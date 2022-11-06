@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset = "UTF-8">
+		<title>DB</title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+
+	<body>
+	
+		<!-- FORM DE BUSCA DE DADOS -->
+		<div class="formBusca">
+			<form method="POST" action="consultaOcr">
+				<p>Insira seu nome:</p>
+				<input name="findOcr"/>
+				<button type="submit">BUSCAR ORÇAMENTO</button>
+			</form>
+		</div>
+		
+		<!-- TABELA -->
+		<div class="tableContainer">
+			<table class="tableProposta">
+			
+				<!-- TABLE HEAD -->
+				<thead>	
+					<!-- LOGO + TITULO -->
+					<tr>
+						<td rowspan="3" class="logo">DIGITAL BUFFET</td>
+						<td class="tituloProposta" colspan="4">PROPOSTA</td>
+					</tr>
+					
+					<!-- DADOS DA EMPRESA -->
+					<tr class="dadosEsdmpresa">
+						<td>Nome da empresa:<br>Digital Buffet</td>
+						<td>CNPJ:<br>100200300400-500</td>
+						<td colspan="2">Endereço da empresa:<br>Rua Fictício/Bairro: Ficção/Número: 0</td>
+					</tr>
+				
+					<!-- CONTATO DA EMPRESA -->
+					<tr class="empresaContato">
+						<td colspan="2" class="espaco"></td>
+						<td>Telefone:<br>(15)99999-9999</td>
+						<td>E-mail:<br>db@email.com</td>
+					</tr>
+				
+					<!-- COLUNAS TABLE -->
+					<tr>
+						<td>Informações Gerais</td>
+						<td>DESCRIÇÃO</td>
+						<td>QUANTIDADE</td>
+						<td>PREÇO UNITÁRIO</td>
+						<td>MONTANTE</td>
+					</tr>
+				</thead>
+				<!-- TABLE HEAD -->
+				
+				<!-- TABLE BODY -->
+				<tbody>
+					<!-- LINHA 1 -->
+					<tr>
+						<!-- NUMERO ORCAMENTO -->
+						<td name="nOcr"></td>
+						
+						<!-- DESCRICAO ITEM 1 - CONVIDADOS: VAL DO PRATO QUENTER $22,90-->
+						<td name="descItem1">CONVIDADOS</td>
+						
+						<!-- QUANTIDADE ITEM 1 -->
+						<td name="qtdItem1"></td>
+						
+						<!-- PRECO UNITARIO ITEM 1 -->
+						<td name="precoItem1"></td>
+						
+						<!-- MONTANTE ITEM 1 -->
+						<td name="totalItem1"></td>	
+					</tr>
+					
+					<!-- LINHA 2 -->
+					<tr>
+						<!-- NOME DO CLIENTE -->
+						<td name="nomeCliente"></td>
+						
+						<!-- DESCRICAO ITEM 2 - PRATO QUENTER $22,90 -->
+						<td name="descItem2">PRATO QUENTE</td>
+						
+						<!-- QUANTIDADE ITEM 2 -->
+						<td name="qtdItem2"></td>
+						
+						<!-- PRECO UNITARIO ITEM 2 -->
+						<td name="precoItem2"></td>
+						
+						<!-- MONTANTE ITEM 2 -->
+						<td name="totalItem2"></td>
+					</tr>
+					
+					<!-- LINHA 3 -->
+					<tr>
+						<!-- ENDERECO CLIENTE -->
+						<td name = "enderecoCliente"></td>
+						
+						<!-- DESCRICAO ITEM 3 - GARÇON: 1/15Convidados - R$250,00/GARÇON-->
+						<td name="descItem3">GARÇON</td>
+						
+						<!-- QUANTIDADE ITEM 3 -->
+						<td name="qtdItem3"></td>
+						
+						<!-- PRECO UNITARIO ITEM 3 -->
+						<td name="precoItem3"></td>
+						
+						<!-- MONTANTE ITEM 3 -->
+						<td name="totalItem3"></td>
+					</tr>
+					
+					<!-- LINHA 4 -->
+					<tr>
+						<!-- TELEFONE CLIENTE -->
+						<td name = "telefoneCliente"></td>
+						
+						<!-- DESCRICAO ITEM 4 - SOBREMESA: 10% do valor total/CONVIDADO-->
+						<td name="descItem4">SOBREMESA</td>
+						
+						<!-- QUANTIDADE ITEM 4 -->
+						<td name="qtdItem4"></td>
+						
+						<!-- PRECO UNITARIO ITEM 4 -->
+						<td name="precoItem4"></td>
+						
+						<!-- MONTANTE ITEM 4 -->
+						<td name="totalItem4"></td>
+					</tr>
+					
+					<!-- LINHA 5 -->
+					<tr>
+						<!-- E-MAIL CLIENTE -->
+						<td name = "emailCliente"></td>
+						
+						<!-- ############## -->
+						<td name="descItem5"></td>
+						
+						<!-- ############## -->
+						<td name="qtdItem5"></td>
+						
+						<!-- ############## -->
+						<td name="precoItem5">TOTAL -></td>
+						
+						<!-- TOTAL -->
+						<td name="totalOcr"></td>
+					</tr>
+				
+				</tbody>
+				<!-- TABLE BODY -->
+				
+				
+				<!-- TABLE FOOT -->
+				<tfoot></tfoot>
+				
+			</table>			
+		</div>
+	
+	</body>
+
+</html>
