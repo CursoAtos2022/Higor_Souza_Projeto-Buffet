@@ -79,34 +79,41 @@ public class gerarOrcamento extends HttpServlet {
 	
 		writer.println("<html>");
 		writer.println(" <head> ");
+			writer.println("  ");
+			writer.println(" <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> ");
 			writer.println("<title>DB</title>");
-			writer.println(" <link href=\"style.css\" rel=\"stylesheet\"> ");
+			writer.println(" <!-- BOOTSTRAP CSS --><link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi\" crossorigin=\"anonymous\"> ");
 		writer.println(" </head> ");
-		writer.println("<body>");
-			writer.printf(" Caro(a) %s, seus dados foram registrados com sucesso!", nomeCliente);
-			writer.println(" <br>Confira abaixo os dados inseridos: ");
+		writer.println("<body class=\"text-bg-dark p-3\">");
 			
-			//TABELA
-			writer.println("<br><div class=\"tableContainer\">");
-				writer.println("<table class=\"tableProposta\">");
+			writer.println(" <!-- BOOTSTRAP JS --><script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script> ");
+			
+			//DIV-TABLE
+			writer.println("<br><div class=\"container\">");
+		
+				writer.printf(" Caro(a) %s, seus dados foram registrados com sucesso!", nomeCliente);
+				writer.println(" <br>Confira abaixo: ");
+			
+				//TABLE
+				writer.println("<table class=\"table table-dark table-striped\">");
 				
 				writer.println(" <thead> ");
 					
 					//LOGO
 					writer.println(" <tr> ");
-						writer.println(" <td rowspan=\"3\" class=\"logo\">DIGITAL BUFFET</td><td class=\"tituloProposta\" colspan=\"4\">ORÇAMENTO</td> ");
+						writer.println(" <td rowspan=\"3\" class=\"logo\">DIGITAL BUFFET</td><th class=\"tituloProposta\" colspan=\"4\"scope=\"col\">ORÇAMENTO</th> ");
 					writer.println(" </tr> ");
 					
 					writer.println(" <tr class=\"dadosEsdmpresa\"> ");
-						writer.println(" <td>Nome da empresa:<br>Digital Buffet</td><td>CNPJ:<br>100200300400-500</td><td colspan=\"2\">Endereço da empresa:<br>Rua Fictício/Bairro: Ficção/Número: 0</td> ");
+						writer.println(" <td>EMPRESA:<br>Digital Buffet</td><td>CNPJ:<br>100200300400-500</td><td colspan=\"2\">ENDEREÇO DA EMPRESA:<br>Rua Fictício/Bairro: Ficção/Número: 0</td> ");
 					writer.println(" </tr> ");
 					
 					writer.println(" <tr class=\"empresaContato\"> ");
-						writer.println(" <td colspan=\"2\" class=\"espaco\"></td><td>Telefone:<br>(15)99999-9999</td><td>E-mail:<br>db@email.com</td> ");
+						writer.println(" <td colspan=\"2\" class=\"espaco\"></td><td>TELEFONE:<br>(15)99999-9999</td><td>E-MAIL:<br>db@email.com</td> ");
 					writer.println(" </tr> ");
 					
 					writer.println(" <tr> ");
-						writer.println(" <td>Dados do Cliente</td><td>DESCRIÇÃO</td><td>QUANTIDADE</td><td>PREÇO UNITÁRIO</td><td>MONTANTE</td> ");
+						writer.println(" <th scope=\"col\">DADOS DO CLIENTE</th><th scope=\"col\">DESCRIÇÃO</th><th scope=\"col\">QUANTIDADE</th><th scope=\"col\">PREÇO UNITÁRIO</td><th scope=\"col\">MONTANTE</th> ");
 					writer.println(" </tr> ");
 					
 				writer.println(" </thead> ");
@@ -115,7 +122,7 @@ public class gerarOrcamento extends HttpServlet {
 					//LINHA 1
 					writer.println(" <tr> ");
 						writer.println(" <!-- NUMERO ORCAMENTO --><td name=\"nOcr\">Número Orçamento:<br>####</td> ");
-						writer.println(" <!-- DESCRICAO ITEM 1 - CONVIDADOS: VAL DO PRATO QUENTER $22,90--><td name=\"descItem1\">CONVIDADOS</td> ");
+						writer.println(" <!-- DESCRICAO ITEM 1 - CONVIDADOS: VAL DO PRATO QUENTER $22,90--><th scope=\"col\" name=\"descItem1\">CONVIDADOS</th> ");
 						writer.printf(" <!-- QUANTIDADE ITEM 1 --><td name=\"qtdItem1\">%d</td> ", qtdConvidadoInt);
 						writer.printf(" <!-- PRECO UNITARIO ITEM 1 --><td name=\"precoItem1\">R$ %f</td> ", valUnitConvidado);
 						writer.printf(" <!-- MONTANTE ITEM 1 --><td name=\"totalItem1\">R$ %f</td> ", valTotalConvidados);
@@ -124,7 +131,7 @@ public class gerarOrcamento extends HttpServlet {
 					//LINHA 2
 					writer.println(" <tr> ");
 						writer.printf(" <!-- NOME DO CLIENTE --><td name=\"nomeCliente\">Nome cliente:<br> %s</td> ", nomeCliente);
-						writer.println(" <!-- DESCRICAO ITEM 2 - GARÇON: 1/15Convidados - R$250,00/GARÇON--><td name=\"descItem2\">GARÇON</td> ");
+						writer.println(" <!-- DESCRICAO ITEM 2 - GARÇON: 1/15Convidados - R$250,00/GARÇON--><th scope=\"col\" name=\"descItem2\">GARÇON</th> ");
 						writer.printf(" <!-- QUANTIDADE ITEM 2 --><td name=\"qtdItem2\">%d</td> ", qtdGarcon);
 						writer.printf(" <!-- PRECO UNITARIO ITEM 2 --><td name=\"precoItem2\">R$ %f</td> ", valUnitGarcon);
 						writer.printf(" <!-- MONTANTE ITEM 2 --><td name=\"totalItem2\">R$ %f</td> ", valTotalGarcon);
@@ -133,7 +140,7 @@ public class gerarOrcamento extends HttpServlet {
 					//LINHA 3
 					writer.println(" <tr> ");
 						writer.printf(" <!-- ENDERECO CLIENTE --><td name = \"enderecoCliente\">Endereço:<br> %s</td> ", enderecoCliente);
-						writer.println(" <!-- DESCRICAO ITEM 3 - SOBREMESA: 10% do valor total/CONVIDADO--><td name=\"descItem3\">SOBREMESA</td> ");
+						writer.println(" <!-- DESCRICAO ITEM 3 - SOBREMESA: 10% do valor total/CONVIDADO--><th scope=\"col\" name=\"descItem3\">SOBREMESA</th> ");
 						writer.printf(" <!-- QUANTIDADE ITEM 3 --><td name=\"qtdItem3\">%d</td>", qtdConvidadoInt);
 						writer.printf(" <!-- PRECO UNITARIO ITEM 3 --><td name=\"precoItem3\">R$ ####</td> ");
 						writer.printf(" <!-- MONTANTE ITEM 3 --><td name=\"totalItem3\">R$ %f</td> ", taxaSobremesa);
@@ -153,16 +160,16 @@ public class gerarOrcamento extends HttpServlet {
 						writer.printf(" <!-- E-MAIL CLIENTE --><td name = \"emailCliente\">E-mail:<br> %s</td> ", emailCliente);
 						writer.println(" <!-- ############## --><td></td> ");
 						writer.printf(" <!-- ############## --><td></td>");
-						writer.printf(" <!-- ############## --><td>TOTAL -></td> ");
-						writer.printf(" <!-- TOTAL --><td name=\"totalOcr\">R$ %f</td>", totalOcr);
+						writer.printf(" <!-- ############## --><th scope=\"col\">TOTAL -></th> ");
+						writer.printf(" <!-- TOTAL --><th scope=\"col\" name=\"totalOcr\">R$ %f</th>", totalOcr);
 					writer.println(" </tr> ");
 					
 				writer.println(" </tbody> ");
 				
 				writer.println("</table>");
 				
-				writer.println("<br>Caso queira visualizar novamente ou editar os dados inseridos, clique no botão abaixo!");
-				writer.println("<br><button onclick=\"window.location.href='consultaOcr.html';\">CONSULTAR ORÇAMENTO</button>");
+				writer.println("<br>Você pode visualizar novamente ou editar os dados inseridos, clicando no botão abaixo!");
+				writer.println("<br><br><button onclick=\"window.location.href='consultaOcr.html';\">CONSULTAR ORÇAMENTO</button>");
 				
 			writer.println("</div>");
 		writer.println("</body>");
