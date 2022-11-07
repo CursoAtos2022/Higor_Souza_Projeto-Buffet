@@ -35,7 +35,6 @@ public class DAO<E> {
 		return this;
 	}
 	
-//********************************************	
 	//READ
 	//METODO DE BUSCA NO BANCO
 	//PARAMETRO DE BUSCA (findOcr)
@@ -83,18 +82,18 @@ public class DAO<E> {
 		
 	}
 	
-	/*
+	
 //********************************************
 	//DELETE
 	//METODO DE DELECAO NO BANCO 
 	//PARAMETRO DE BUSCA (findOcr)
 	public DAO<E> deletar(String findOcr){
 		DAO<E> dao = new DAO<E>(entidade);
-		E entidadeEncontrada = dao.buscar(findOcr);
+		Orcamento entidadeEncontrada = dao.buscar(findOcr);
 		em.remove(em.contains(entidadeEncontrada)? entidadeEncontrada : em.merge(entidadeEncontrada));
 		return this;
 	}
-	*/
+	
 		
 	//METODO FECHA CONEXAO COM BANCO
 	public DAO<E> fechaConexao(){

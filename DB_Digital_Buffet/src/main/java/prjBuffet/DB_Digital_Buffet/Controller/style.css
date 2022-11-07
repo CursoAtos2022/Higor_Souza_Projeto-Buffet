@@ -1,0 +1,49 @@
+.formContainer{
+	height: 550px;
+	width:900px;
+	background-color: white;
+	align-items: left;
+	color: black;
+	font-size: 20px
+}
+
+
+
+/*=================PAGINA DE CONSULTA=================*/
+
+/*DIV DO FORM DE BUSCA*/
+.formBusca{
+	height: 100px;
+	width:900px;
+	background-color:white;
+	color: black;
+	font-size: 20px
+}
+/*CAIXA DE TEXTO-BUSCA*/
+.findOcr{
+	height: 20px;
+    width: 780px;
+}
+
+/*DIV DA TABELA*/
+.tableContainer{
+	height: 500px;
+	width:900px;
+	background-color:white;
+}
+
+/*TABELA*/
+.tableProposta{
+	background-color: #ffffff;
+	border: 1px solid black;
+	height:400px;
+	width: 800px;
+}
+
+/*CELULAS*/
+tr, td{
+	border: 1px solid black;
+	height: 30px;
+    width: 300px;
+    text-align: center;
+}
